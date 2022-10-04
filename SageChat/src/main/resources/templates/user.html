@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 th:text="'Hello ' +${username.username}"></h2>
+
+<h4 th:text="'You are logged as: ' +${username.login}"></h4>
+
+<form th:action="@{/user/{id}(id=${username.id})}" action = "#" method = "post">
+<div class = "selector">
+    <p>Select Channel to See:</p>
+    <select th:name="channel">
+        <option th:each="channel : ${channels}" th:text="${channel.name}"></option>
+    </select>
+    <div class = "input-field">
+        <input type = "submit" value = "VIEW">
+    </div>
+</div>
+</form>
+
+<p>**********************************</p>
+
+<table th:each="chat : ${chats}">
+    <tr th:text="${chat.user.username}+':   '+${chat.content}"></tr>
+</table>
+
+<p>**********************************</p>
+
+<form style="float:top" th:action = "@{/post/{id}(id=${username.id})}" action = "#" method = "post">
+    <div class = "input-field">
+        <label for ="post">New message:</label>
+        <input type="post" id = "post" name = "post">
+    </div>
+    <div class = "selector">
+        <p>Select Channel to Post to:</p>
+        <select th:name="channel">
+            <option th:each="channel : ${channels}" th:text="${channel.name}"></option>
+        </select>
+    </div>
+        <div class = "input-field">
+        <input type = "submit" value = "SEND">
+    </div>
+</form>
+
+<button type="button" th:onclick="|window.location.href='/'|">LOG OUT</button></td>
+</body>
+</html>

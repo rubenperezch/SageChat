@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+</head>
+<body>
+
+<h1 th:text="${message}"></h1>
+
+<h3>Login Existing User</h3>
+
+<form style="float:top" th:action = "@{/login}" action = "#" method = "post">
+    <div class = "input-field">
+        <label for ="login">login:</label>
+        <input type="login" id = "login" name = "login">
+    </div>
+    <div class = "password">
+        <label for ="password">password:</label>
+        <input type="password" id = "password" name = "password">
+    </div>
+    <div class = "input-field">
+        <input type = "submit" value = "Login User">
+    </div>
+</form>
+
+<button type="button" th:onclick="|window.location.href='/'|">REGISTER</button></td>
+
+</body>
+</html>

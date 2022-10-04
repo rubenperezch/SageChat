@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+</head>
+<body>
+
+<h3>Register New User</h3>
+
+<form style="float:top" th:action = "@{/}" action = "#" method = "post">
+    <div class = "input-field">
+        <label for ="login">login:</label>
+        <input type="login" id = "login" name = "login">
+    </div>
+    <div class = "password">
+        <label for ="password">password:</label>
+        <input type="password" id = "password" name = "password">
+    </div>
+    <div class = "input-field">
+        <input type = "submit" value = "Register User">
+    </div>
+</form>
+
+<button type="button" th:onclick="|window.location.href='/login'|">LOGIN</button></td>
+
+</body>
+</html>
